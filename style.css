@@ -19,6 +19,24 @@ div#GlobalState li {
     display: inline;
 }
 
+div#GlobalMessages {
+    margin-top: 1em;
+    border: 2px solid black;
+    height: 30vh;
+    width: 40vw;
+    padding: 1.5em 1em 1em 1em;
+}
+div#GlobalMessages ul {
+    height: 100%;
+    width: 40vw;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+div#GlobalMessages li + li {
+    padding-top: .25em;
+}
+
 div#card {
     border: 2px solid black;
     height: 20vh;
@@ -37,7 +55,7 @@ div#Main {
 
 div h2 {
     position: absolute;
-    width: 6em;
+    width: 8em;
     border: 2px solid black;
     margin-top: -1.5em;
     padding-left: .5em;

@@ -22,12 +22,13 @@ class Card {
         console.log(`Error, no ${id} exists.`);
     }
 
-    play(state=GlobalState) {
+    play(state=GlobalState, message=GlobalMessages) {
         if ('effects' in this) {
             for (const e of this.effects) {
                 e(state);
             }
         }
+        message.post(this.name);
         return this;
     }
 

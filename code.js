@@ -86,7 +86,7 @@ GlobalState.register_init_action(() => {
     GlobalState.addTrigger('season',SetTimer(13,GlobalState,seasonMessage));
     
     const b = document.getElementById('drawButton');
-    b.onclick=() => { GlobalState.getDeck('Main').draw([getSeasonFilter()]).play().show('card'); GlobalState.display();GlobalState.applyTriggers();};
+    b.onclick=() => { GlobalState.getDeck('Main').draw([getSeasonFilter()]).play(); GlobalState.display(); GlobalState.applyTriggers();};
     
     const s = document.getElementById('shuffleButton');
     s.onclick=() => { GlobalState.getDeck('Main').shuffle(); GlobalState.display();};
