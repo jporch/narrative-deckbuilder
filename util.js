@@ -1,8 +1,4 @@
-function tick(state, clockName='time', increment=1) {
-    state.updateValue(clockName, increment);
-}
-
-function getSeasonFilter(state, clockName='time', ticksPerSeason=13) {
+function getSeasonFilter(state=GlobalState, clockName='time', ticksPerSeason=13) {
     let t = state.getValue(clockName);
     if (t < 0) {
         console.log('Error: time cannot be negative.');

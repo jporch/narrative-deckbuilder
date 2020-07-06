@@ -1,11 +1,9 @@
 class Deck {
-    constructor (cards = [], id='', name='') {
-        if (name === '') { 
-            name = id;
-        }
+    constructor (id='', name='',cards = []) {
+        const n = name || id;
         this.deck = [];
         this.id = id;
-        this.name = name;
+        this.name = n;
         const newCards = [];
 
         for (const c of cards) {
@@ -30,23 +28,21 @@ class Deck {
     }
 
     static Merge(decks, id='', name='') {
-        const newDeck = new Deck([],id,name);
+        const newDeck = new Deck(id,name,[]);
         for (const d of decks) {
             newDeck.insert(d.deck);
         }
         return newDeck;
     }
     merge(decks, id='', name='') {
-        const _id = id || this.id;
-        const _name = name || this.name;
-        const newDeck = new Deck(this.deck,_id,_name);
+        const newDeck = new Deck(id || this.id,name || this.name,this.deck);
         for (const d of decks) {
             newDeck.insert(d.deck);
         }
         return newDeck;
     }
     static Filter(deck, predicates, id='', name='') {
-        const newDeck = new Deck([],id,name);
+        const newDeck = new Deck(id,name,[]);
         let d = deck.deck;
         for (const p of predicates) {
             d = d.filter(p);
@@ -56,9 +52,7 @@ class Deck {
         return newDeck;
     }
     filter(predicates, id='', name='') {
-        const _id = id || this.id;
-        const _name = name || this.name;
-        const newDeck = new Deck([],_id,_name);
+        const newDeck = new Deck(id || this.id,name || this.name,[]);
         let d = this.deck;
         for (const p of predicates) {
             d = d.filter(p);
@@ -105,4 +99,4 @@ class Deck {
     }
 }
 
-emptyDeck = new Deck();
+EmptyDeck = new Deck();

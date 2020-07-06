@@ -22,13 +22,12 @@ class Card {
         console.log(`Error, no ${id} exists.`);
     }
 
-    play(state=new State(), deck = emptyDeck) {
+    play(state=GlobalState) {
         if ('effects' in this) {
             for (const e of this.effects) {
-                e(state, deck);
+                e(state);
             }
         }
-        console.log(`Playing ${this.name}`);
         return this;
     }
 

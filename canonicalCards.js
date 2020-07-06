@@ -6,7 +6,8 @@ const Spring = {
         description: 'Nothing of note happened this week.',
         tags: ['spring'],
         effects: [
-            (state, deck) => { state.updateValue('peace',1); tick(state); }
+            (state) => { state.updateValue('peace',1) },
+            (state) => { state.tick() },
         ],
     },
     'spring_2': {
@@ -14,7 +15,8 @@ const Spring = {
         description: 'Everyone worked quite hard and got a lot done this week.',
         tags: ['spring'],
         effects: [
-            (state, deck) => { state.updateValue('productive',1); tick(state); }
+            (state) => { state.updateValue('productive',1) },
+            (state) => { state.tick() },
         ],
     },
     'spring_3': {
@@ -22,7 +24,8 @@ const Spring = {
         description : 'Everyone felt pressured and extremely busy this week.',
         tags: ['spring'],
         effects: [
-            (state, deck) => { state.updateValue('stress',1); tick(state); }
+            (state) => { state.updateValue('stress',1) },
+            (state) => { state.tick() },
         ],
     },
     'spring_4': {
@@ -30,7 +33,8 @@ const Spring = {
         description : "Time to celebrate Nature's rebirth!",
         tags: ['spring','celebration'],
         effects: [
-            (state, deck) => { state.updateValue('festival',1); tick(state); }
+            (state) => { state.updateValue('festival',1) },
+            (state) => { state.tick() },
         ],
     },
     'spring_5': {
@@ -38,7 +42,8 @@ const Spring = {
         description : 'Everything just seemed to go very well this week.',
         tags: ['spring'],
         effects: [
-            (state, deck) => { state.updateValue('pleasant',1); tick(state); }
+            (state) => { state.updateValue('pleasant',1) },
+            (state) => { state.tick() },
         ],
     },
 };
@@ -49,7 +54,8 @@ const Summer = {
         description: 'Too warm to do much of anything this week.',
         tags: ['summer'],
         effects: [
-            (state, deck) => { state.updateValue('peace',1); tick(state); }
+            (state) => { state.updateValue('peace',1) },
+            (state) => { state.tick() },
         ],
     },
     'summer_2': {
@@ -57,7 +63,8 @@ const Summer = {
         description: 'Everyone worked smarter not harder and got a lot done this week.',
         tags: ['summer'],
         effects: [
-            (state, deck) => { state.updateValue('productive',1); tick(state); }
+            (state) => { state.updateValue('productive',1) },
+            (state) => { state.tick() },
         ],
     },
     'summer_3': {
@@ -65,7 +72,8 @@ const Summer = {
         description : 'The weather is brutal this week.',
         tags: ['summer'],
         effects: [
-            (state, deck) => { state.updateValue('stress',1); tick(state); }
+            (state) => { state.updateValue('stress',1) },
+            (state) => { state.tick() },
         ],
     },
     'summer_4': {
@@ -73,7 +81,8 @@ const Summer = {
         description : "Time to celebrate the longest day of the year!",
         tags: ['summer','celebration'],
         effects: [
-            (state, deck) => { state.updateValue('festival',1); tick(state); }
+            (state) => { state.updateValue('festival',1) },
+            (state) => { state.tick() },
         ],
     },
     'summer_5': {
@@ -81,7 +90,8 @@ const Summer = {
         description : 'The heat broke enough to enjoy this week.',
         tags: ['summer'],
         effects: [
-            (state, deck) => { state.updateValue('pleasant',1); tick(state); }
+            (state) => { state.updateValue('pleasant',1) },
+            (state) => { state.tick() },
         ],
     },
 };
@@ -92,7 +102,8 @@ const Fall = {
         description: 'Lots of time to swatch the leaves change colors this week.',
         tags: ['fall'],
         effects: [
-            (state, deck) => { state.updateValue('peace',1); tick(state); }
+            (state) => { state.updateValue('peace',1) },
+            (state) => { state.tick() },
         ],
     },
     'fall_2': {
@@ -100,7 +111,8 @@ const Fall = {
         description: 'Bumper crops kept everybody busy this week.',
         tags: ['fall'],
         effects: [
-            (state, deck) => { state.updateValue('productive',1); tick(state); }
+            (state) => { state.updateValue('productive',1) },
+            (state) => { state.tick() },
         ],
     },
     'fall_3': {
@@ -108,7 +120,8 @@ const Fall = {
         description : 'Everyone was really worried about the future this week.',
         tags: ['fall'],
         effects: [
-            (state, deck) => { state.updateValue('stress',1); tick(state); }
+            (state) => { state.updateValue('stress',1) },
+            (state) => { state.tick() },
         ],
     },
     'fall_4': {
@@ -116,7 +129,8 @@ const Fall = {
         description : "Time to celebrate nature's bounty!",
         tags: ['fall','celebration'],
         effects: [
-            (state, deck) => { state.updateValue('festival',1); tick(state); }
+            (state) => { state.updateValue('festival',1) },
+            (state) => { state.tick() },
         ],
     },
     'fall_5': {
@@ -124,7 +138,8 @@ const Fall = {
         description : 'The heat broke enough to enjoy this week.',
         tags: ['fall'],
         effects: [
-            (state, deck) => { state.updateValue('pleasant',1); tick(state); }
+            (state) => { state.updateValue('pleasant',1) },
+            (state) => { state.tick() },
         ],
     },
 };
@@ -135,7 +150,8 @@ const Winter = {
         description: 'Everyone huddled inside with a warm fire this week.',
         tags: ['winter'],
         effects: [
-            (state, deck) => { state.updateValue('peace',1); tick(state); }
+            (state) => { state.updateValue('peace',1) },
+            (state) => { state.tick() },
         ],
     },
     'winter_2': {
@@ -143,7 +159,8 @@ const Winter = {
         description: 'Everyone came together to make good use of this week.',
         tags: ['winter'],
         effects: [
-            (state, deck) => { state.updateValue('productive',1); tick(state); }
+            (state) => { state.updateValue('productive',1) },
+            (state) => { state.tick() },
         ],
     },
     'winter_3': {
@@ -151,7 +168,8 @@ const Winter = {
         description : 'It never stopped snowing this week.',
         tags: ['winter'],
         effects: [
-            (state, deck) => { state.updateValue('stress',1); tick(state); }
+            (state) => { state.updateValue('stress',1) },
+            (state) => { state.tick() },
         ],
     },
     'winter_4': {
@@ -159,7 +177,8 @@ const Winter = {
         description : "Give each other gifts to ring in the coming year",
         tags: ['winter','celebration'],
         effects: [
-            (state, deck) => { state.updateValue('festival',1); tick(state); }
+            (state) => { state.updateValue('festival',1) },
+            (state) => { state.tick() },
         ],
     },
     'winter_5': {
@@ -167,7 +186,8 @@ const Winter = {
         description : 'Clear skies and hardly any wind this week.',
         tags: ['winter'],
         effects: [
-            (state, deck) => { state.updateValue('pleasant',1); tick(state); }
+            (state) => { state.updateValue('pleasant',1) },
+            (state) => { state.tick() },
         ],
     },
 };
@@ -178,7 +198,8 @@ const Special = {
         description: 'Bandits pass through and notice your crop. They warn you they will return and expect tribute in the Fall.',
         tags: ['bandits','spring','summer'],
         effects: [
-            (state, deck) => { state.updateValue('bandits',1); tick(state); }
+            (state) => { state.updateValue('bandits',1) },
+            (state) => { state.tick() },
         ],
     },
     'bandit_2': {
@@ -187,7 +208,8 @@ const Special = {
         tags: ['bandits','raid','spring','summer','fall'],
         active: false,
         effects: [
-            (state, deck) => { state.updateValue('bandits',1); tick(state); }
+            (state) => { state.updateValue('bandits',1) },
+            (state) => { state.tick() },
         ],
     },
     'bandit_3': {
@@ -196,7 +218,8 @@ const Special = {
         tags: ['bandits','raid','winter'],
         active: false,
         effects: [
-            (state, deck) => { state.updateValue('bandits',1); tick(state); }
+            (state) => { state.updateValue('bandits',1) },
+            (state) => { state.tick() },
         ],
     },
     'surprise_1': {

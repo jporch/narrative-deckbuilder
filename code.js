@@ -1,4 +1,4 @@
-const normalWeeks = new Deck([
+const normalWeeks = new Deck('Normal','Normal',[
     'spring_1',
     'spring_1',
     'spring_1',
@@ -52,7 +52,7 @@ const normalWeeks = new Deck([
     'winter_5',
     'winter_5',
 ]);
-const specialEvents = new Deck([
+const specialEvents = new Deck('Special','Special',[
     'bandit_1',
     'bandit_1',
     'bandit_1',
@@ -60,37 +60,37 @@ const specialEvents = new Deck([
     'surprise_1',
 ]);
 
-const globalState = new State({
-    'test':123,
-    'time':1
-},{
-    'Normal': normalWeeks,
-    'Special': specialEvents,
+GlobalState.register_init_action(() => {
+    GlobalState.setValue('time',1);
+    GlobalState.addDeck(normalWeeks);
+    GlobalState.addDeck(specialEvents);
+    let mainDeck = new Deck('Main');
+    mainDeck = mainDeck.merge([GlobalState.getDeck('Normal'),GlobalState.getDeck('Special')]);
+    mainDeck = mainDeck.filter([hasAnyTag]);
+    GlobalState.addDeck(mainDeck);
+    GlobalState.getDeck('Main').show();
+    GlobalState.display();
+    function seasonMessage() {
+        if (GlobalState.getValue('time') > 52) {
+            alert('year!!!');
+            GlobalState.setValue('time',1);
+            GlobalState.getDeck('Main').shuffle();
+            GlobalState.display();
+        } else {
+            alert('season!');
+        }
+    
+        GlobalState.removeTrigger('season');
+        GlobalState.addTrigger('season',SetTimer(13,GlobalState,seasonMessage));
+    };
+    GlobalState.addTrigger('season',SetTimer(13,GlobalState,seasonMessage));
+    
+    const b = document.getElementById('drawButton');
+    b.onclick=() => { GlobalState.getDeck('Main').draw([getSeasonFilter()]).play().show('card'); GlobalState.display();GlobalState.applyTriggers();};
+    
+    const s = document.getElementById('shuffleButton');
+    s.onclick=() => { GlobalState.getDeck('Main').shuffle(); GlobalState.display();};
 });
-let mainDeck = new Deck([],'Main');
-mainDeck = mainDeck.merge([globalState.getDeck('Normal'),globalState.getDeck('Special')]);
-//mainDeck = mainDeck.filter([hasAnyTag]);
-globalState.addDeck(mainDeck);
-globalState.getDeck('Main').show();
-globalState.display();
-function seasonMessage() {
-    if (globalState.getValue('time') > 52) {
-        alert('year!!!');
-        globalState.setValue('time',1);
-        globalState.getDeck('Main').shuffle();
-        globalState.display();
-    } else {
-        alert('season!');
-    }
-
-    globalState.removeTrigger('season');
-    globalState.addTrigger('season',SetTimer(13,globalState,seasonMessage));
-
-};
-globalState.addTrigger('season',SetTimer(13,globalState,seasonMessage));
-
-const b = document.getElementById('drawButton');
-b.onclick=() => { globalState.getDeck('Main').draw([getSeasonFilter(globalState)]).play(globalState).show('card'); globalState.display();globalState.applyTriggers();};
-
-const s = document.getElementById('shuffleButton');
-s.onclick=() => { globalState.getDeck('Main').shuffle(); globalState.display();};
+GlobalState.register_init_action(function a() {let x = 1;},0);
+GlobalState.register_init_action(function b() {let x = 2;},99999999);
+GlobalState.init();
