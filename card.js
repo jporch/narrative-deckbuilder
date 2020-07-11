@@ -28,7 +28,7 @@ class Card {
                 e(state);
             }
         }
-        message.post(this.name);
+        message.post(`${this.name}: ${this.description}`);
         return this;
     }
 

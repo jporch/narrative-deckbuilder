@@ -72,12 +72,12 @@ GlobalState.register_init_action(() => {
     GlobalState.display();
     function seasonMessage() {
         if (GlobalState.getValue('time') > 52) {
-            alert('year!!!');
+            GlobalMessages.post('A new year...');
             GlobalState.setValue('time',1);
             GlobalState.getDeck('Main').shuffle();
             GlobalState.display();
         } else {
-            alert('season!');
+            GlobalMessages.post('Next season!');
         }
     
         GlobalState.removeTrigger('season');
