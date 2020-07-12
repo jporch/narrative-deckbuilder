@@ -37,20 +37,20 @@ div#GlobalMessages li + li {
     padding-top: .25em;
 }
 
-div#card {
+div.Deck {
     border: 2px solid black;
-    height: 20vh;
-    max-width: 30em;
+    margin-top: 1em;
+    width: 13em;
     padding: 1.5em 1em 1em 1em;
     margin-top: 1em;
 }
 
-div.Deck {
-    border: 2px solid black;
+.Deck button {
     margin-top: 1em;
-    max-width: 30em;
-    padding: 1.5em 1em 1em 1em;
-    margin-top: 1em;
+    height: 8em;
+    width: 6em;
+    display: block;
+    margin: auto;
 }
 
 div h2 {
@@ -62,9 +62,7 @@ div h2 {
     background-color: white;
 }
 
-button#drawButton {
-    margin-top: 1em;
-}
+
 
 label {
     font-weight: bold;

@@ -75,15 +75,21 @@ class Deck {
         let rand = Math.floor(Math.random()*d.length);
         const r = d[rand];
         r.deactivate();
-        this.show();
+        this.display();
         return r;
     }
 
-    show() {
+    display() {
         const el = document.getElementById(this.id);
-        el.querySelector('.deckSize').innerText = this.size([isActive]);
-        el.querySelector('.discardSize').innerText = this.size([isInactive]);
-        return this;
+        const newEl = el.cloneNode(false);
+        const newH2 = document.createElement('H2');
+        newH2.innerText=this.name;
+        newEl.appendChild(newH2);
+        const newButton = document.createElement('BUTTON');
+        newButton.innerText = 'Draw';
+        newButton.onclick = () => { GlobalState.getDeck('Main').draw([getSeasonFilter()]).play(); GlobalState.display(); GlobalState.applyTriggers(); }
+        newEl.appendChild(newButton);
+        el.parentNode.replaceChild(newEl,el); // Clears all children from past display
     }
 
     size(filter=[]) {
@@ -95,7 +101,7 @@ class Deck {
         for (const c of this.deck) {
             c.activate();
         }
-        this.show();
+        this.display();
     }
 }
 
