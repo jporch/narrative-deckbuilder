@@ -1,16 +1,16 @@
-div#GlobalState {
+div.State {
     margin-top: 1em;
     border: 2px solid black;
     height: 20vh;
-    width: 40vw;
+    max-width: 60em;
     padding: 1.5em 1em 1em 1em;
 }
-div#GlobalState ul {
+div.State ul {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
-    width: 40vw;
+    max-width: 60em;
     margin: 0;
     padding: 0;
 }
@@ -23,12 +23,12 @@ div#GlobalMessages {
     margin-top: 1em;
     border: 2px solid black;
     height: 30vh;
-    width: 40vw;
+    max-width: 60em;
     padding: 1.5em 1em 1em 1em;
 }
 div#GlobalMessages ul {
     height: 100%;
-    width: 40vw;
+    max-width: 60em;
     margin: 0;
     padding: 0;
     overflow-y: scroll;
@@ -40,15 +40,15 @@ div#GlobalMessages li + li {
 div#card {
     border: 2px solid black;
     height: 20vh;
-    width: 20vw;
+    max-width: 30em;
     padding: 1.5em 1em 1em 1em;
     margin-top: 1em;
 }
 
-div#Main {
+div.Deck {
     border: 2px solid black;
     margin-top: 1em;
-    width: 20vw;
+    max-width: 30em;
     padding: 1.5em 1em 1em 1em;
     margin-top: 1em;
 }
