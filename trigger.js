@@ -24,7 +24,7 @@ class Condition {
     }
 }
 
-SetTimer = (delay,state,result,clockName='time') => {
+SetTimer = (delay,state,result,clockName='__time') => {
     return new Trigger([new Condition(clockName,gte,state.getValue(clockName)+delay)],result);
 }
 

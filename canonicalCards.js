@@ -198,7 +198,7 @@ const Special = {
         description: 'Bandits pass through and notice your crop. They warn you they will return and expect tribute in the Fall.',
         tags: ['bandits','spring','summer'],
         effects: [
-            (state) => { state.updateValue('bandits',1) },
+            (state) => { state.updateValue('__bandits',1) },
             (state) => { state.tick() },
         ],
     },
@@ -208,7 +208,7 @@ const Special = {
         tags: ['bandits','raid','spring','summer','fall'],
         active: false,
         effects: [
-            (state) => { state.updateValue('bandits',1) },
+            (state) => { state.updateValue('__bandits',2) },
             (state) => { state.tick() },
         ],
     },
@@ -218,7 +218,7 @@ const Special = {
         tags: ['bandits','raid','winter'],
         active: false,
         effects: [
-            (state) => { state.updateValue('bandits',1) },
+            (state) => { state.updateValue('__bandits',3) },
             (state) => { state.tick() },
         ],
     },

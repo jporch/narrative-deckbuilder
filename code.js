@@ -61,7 +61,8 @@ const specialEvents = new Deck('Special','Special',[
 ]);
 
 GlobalState.register_init_action(() => {
-    GlobalState.setValue('time',1);
+    GlobalState.setValue('__time',1);
+    GlobalState.setValue('Season','Spring');
     GlobalState.addDeck(normalWeeks);
     GlobalState.addDeck(specialEvents);
     let mainDeck = new Deck('Main');
@@ -71,15 +72,15 @@ GlobalState.register_init_action(() => {
     GlobalState.getDeck('Main').show();
     GlobalState.display();
     function seasonMessage() {
-        if (GlobalState.getValue('time') > 52) {
+        if (GlobalState.getValue('__time') > 52) {
             GlobalMessages.post('A new year...');
-            GlobalState.setValue('time',1);
+            GlobalState.setValue('__time',1);
             GlobalState.getDeck('Main').shuffle();
             GlobalState.display();
         } else {
             GlobalMessages.post('Next season!');
         }
-    
+        GlobalState.setValue('Season',getSeason());
         GlobalState.removeTrigger('season');
         GlobalState.addTrigger('season',SetTimer(13,GlobalState,seasonMessage));
     };

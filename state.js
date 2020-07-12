@@ -98,6 +98,7 @@ class State {
         for (const key of Object.keys(this._triggers)) {
             this._triggers[key].apply(this);
         }
+        this.display();
     }
 
     display() {
@@ -108,6 +109,7 @@ class State {
         newEl.appendChild(newH2);
         const newUL = document.createElement('UL');
         for (const key of Object.keys(this._values)) {
+            if (key.startsWith('__')) continue; // TODO: Decide if this is final way of handling hidden state 
             const item = document.createElement('LI');
             item.innerText=`${key}: ${this._values[key]}`;
             newUL.append(item);
@@ -118,7 +120,7 @@ class State {
 
 
     // Convenience Functions
-    tick(increment=1,clockName='time') {
+    tick(increment=1,clockName='__time') {
         this.updateValue(clockName, increment);
     }
 
